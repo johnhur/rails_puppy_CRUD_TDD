@@ -1,0 +1,16 @@
+<%= link_to "Add A New Puppy", puppies_new_path, class:"btn btn-info", id:"add_new_puppy" %>
+<div class="row">
+  <% @puppies.each do |puppy| %>
+    <div class="col-sm-6 col-md-4" style="height:436.667px;">
+      <div class="thumbnail">
+        <%= image_tag(puppy.image_url) %>
+        <div class="caption">
+          <h3><%= link_to "#{puppy.name}", puppy_path(puppy), id:"puppyId:#{puppy.id}" %></h3>
+          <p><%= puppy.breed %></p>
+          <p><%= puppy.age %></p>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

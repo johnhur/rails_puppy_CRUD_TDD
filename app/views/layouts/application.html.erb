@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PuppyCrudApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+      <%= link_to "Home", root_path, class:"navbar-text" %> 
+      <%= link_to "See All Puppies!", puppies_path, class:"navbar-text" %> 
+      <%= link_to "About", "/about", class:"navbar-text" %> 
+			<%= link_to "Contact", "/contact",class:"navbar-text" %>
+		</div>
+  </div>
+  <br>
+  
+  <div class="container main">
+    <% if notice %>
+      <div class="alert alert-success errors">
+        <%= notice %>
+      </div>
+    <% end %>
+    <%= yield %>	
+  </div>
+
+</body>
+</html>
