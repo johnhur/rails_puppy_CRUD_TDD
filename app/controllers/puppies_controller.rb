@@ -10,7 +10,7 @@ class PuppiesController < ApplicationController
   end
 
   def create
-  	puts puppy_params
+  	# puts puppy_params
   	@puppy = Puppy.create(puppy_params)
   	if @puppy.save
   	  redirect_to puppies_path, notice: 'Puppy has been added!'

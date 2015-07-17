@@ -17,7 +17,9 @@ describe 'Puppy' do
 
     #Write a test below to make sure Puppy responds to breed
     # => Test that puppy responds to breed
+    it { is_expected.to respond_to :breed}
     # => Test that puppy responds to image_url
+    it { is_expected.to respond_to :image_url}
 
     #This tests for uniqueness in the Puppy model
     it { is_expected.to validate_uniqueness_of :name}

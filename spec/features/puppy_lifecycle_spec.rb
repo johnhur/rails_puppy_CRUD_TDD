@@ -4,7 +4,7 @@ feature 'Adding Milo, a new puppy that gets a name change' do
 
   before do
     #Create the valid puppy
-    puppy = Puppy.create(name:"x" )
+    
     #setup scenario
     # => visit the puppies index path
     visit puppies_path
@@ -30,23 +30,28 @@ feature 'Adding Milo, a new puppy that gets a name change' do
     # You should see the new puppy name on the list
     # This will take you to Milo's show page:
     click_link "puppyId:#{Puppy.last.id}"
-    # => click on the edit button
 
+    click_link 'edit_puppy_path'
+   
     # => update the form so Milo's name is changed to Otis
+    fill_in "name", with: "Otis"
 
+     # => click on the edit button
+    click_button 'post'
     # => expect the show page header to include the word Otis
-    # expect(find('.page-header')).to
+    expect(find('.page-header')).to have_content "Otis"
 
     # => expect the show page header to not include the word Milo
-    # expect(find('.page-header')).to_not
+    expect(find('.page-header')).to_not have_content "Milo"
   end
 
   scenario 'puppy is adopted' do
     #setup scenario
-
+    click_link "puppyId:#{Puppy.last.id}"
     #execute scenario
+    click_link "adopt"
 
-    expect().to
+    expect(page).to_not have_content "Otis"
   end
 
 end

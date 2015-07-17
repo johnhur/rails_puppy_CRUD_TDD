@@ -16,7 +16,7 @@
        <h5>Breed:<%= @puppy.breed %></h5>
        <h5>Bio:</h5><p><%= @puppy.bio %></p>
        <%= link_to "Edit", edit_puppy_path(@puppy), class:"btn btn-primary", id: "edit_puppy_path" %>
-       <%= link_to "Adopted", @puppy, method: :delete, data:{alert:"are you sure?"} ,class:"btn btn-default" %>
+       <%= link_to "Adopted", @puppy, method: :delete, data:{alert:"are you sure?"} ,class:"btn btn-default", id:"adopt"%>
  </div>
 </div>
 
