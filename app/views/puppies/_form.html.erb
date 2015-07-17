@@ -3,7 +3,7 @@
 	<div class="form-group">
 		<%= f.label :name, class:"col-md-2"  %>
 		<div class="col-sm-7">
-			<%= f.text_field :name, class:"form-control" %>
+			<%= f.text_field :name, class:"form-control", id:"name" %>
 		</div>
 	</div>
 
@@ -36,7 +36,7 @@
 	</div>
 
 	<div class="actions col-sm-offset-2">
-		<%= f.submit class:"btn btn-primary" %>
-		<%= link_to 'Cancel', puppies_path, class:"btn btn-default" %>
+		<%= f.submit class:"btn btn-primary", id:"post" %>
+		<%= link_to 'Cancel', puppies_path, class:"btn btn-default"%>
 	</div>
 <% end %>

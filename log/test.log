@@ -1,0 +1,985 @@
+  [1m[36m (126.0ms)[0m  [1mDROP DATABASE IF EXISTS "puppy_crud_app_test"[0m
+  [1m[35m (361.8ms)[0m  CREATE DATABASE "puppy_crud_app_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.9ms)[0m  CREATE TABLE "puppies" ("id" serial primary key, "name" character varying, "age" integer, "breed" character varying, "bio" character varying, "image_url" character varying, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150630175546')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:36:50.886275"], ["updated_at", "2015-07-16 23:36:50.886275"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:36:50.901596"], ["updated_at", "2015-07-16 23:36:50.901596"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:36:50.904890"], ["updated_at", "2015-07-16 23:36:50.904890"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:36:50.907857"], ["updated_at", "2015-07-16 23:36:50.907857"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.7ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:37:32.265977"], ["updated_at", "2015-07-16 23:37:32.265977"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:37:32.273441"], ["updated_at", "2015-07-16 23:37:32.273441"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:37:32.277252"], ["updated_at", "2015-07-16 23:37:32.277252"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:37:32.281024"], ["updated_at", "2015-07-16 23:37:32.281024"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.9ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:38:16.007609"], ["updated_at", "2015-07-16 23:38:16.007609"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:38:16.014210"], ["updated_at", "2015-07-16 23:38:16.014210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:38:16.017373"], ["updated_at", "2015-07-16 23:38:16.017373"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:38:16.020436"], ["updated_at", "2015-07-16 23:38:16.020436"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (1.2ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:45:43.480663"], ["updated_at", "2015-07-16 23:45:43.480663"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:45:43.487457"], ["updated_at", "2015-07-16 23:45:43.487457"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:45:43.491051"], ["updated_at", "2015-07-16 23:45:43.491051"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:45:43.494249"], ["updated_at", "2015-07-16 23:45:43.494249"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.7ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:46:05.697143"], ["updated_at", "2015-07-16 23:46:05.697143"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:46:05.703873"], ["updated_at", "2015-07-16 23:46:05.703873"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:46:05.707081"], ["updated_at", "2015-07-16 23:46:05.707081"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:46:05.710667"], ["updated_at", "2015-07-16 23:46:05.710667"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.8ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:48:39.799091"], ["updated_at", "2015-07-16 23:48:39.799091"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:48:39.806305"], ["updated_at", "2015-07-16 23:48:39.806305"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:48:39.810030"], ["updated_at", "2015-07-16 23:48:39.810030"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:48:39.813264"], ["updated_at", "2015-07-16 23:48:39.813264"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.7ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:49:31.568941"], ["updated_at", "2015-07-16 23:49:31.568941"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:49:31 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.8ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 7385ms (Views: 7373.3ms | ActiveRecord: 0.8ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:49:38 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.8ms)
+  Rendered puppies/_form.html.erb (38.6ms)
+  Rendered puppies/new.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 53ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:49:39.051169"], ["updated_at", "2015-07-16 23:49:39.051169"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:49:39 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:49:39 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.1ms)
+  Rendered puppies/_form.html.erb (2.3ms)
+  Rendered puppies/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:49:39.070569"], ["updated_at", "2015-07-16 23:49:39.070569"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:49:39 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:49:39 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (3.1ms)
+  Rendered puppies/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:49:39.094844"], ["updated_at", "2015-07-16 23:49:39.094844"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:49:39.101143"], ["updated_at", "2015-07-16 23:49:39.101143"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:49:39.105069"], ["updated_at", "2015-07-16 23:49:39.105069"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:49:39.109787"], ["updated_at", "2015-07-16 23:49:39.109787"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.6ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:50:16.202214"], ["updated_at", "2015-07-16 23:50:16.202214"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 202ms (Views: 192.0ms | ActiveRecord: 0.4ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.7ms)
+  Rendered puppies/_form.html.erb (31.8ms)
+  Rendered puppies/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:50:16.491032"], ["updated_at", "2015-07-16 23:50:16.491032"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:50:16.510223"], ["updated_at", "2015-07-16 23:50:16.510223"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (3.2ms)
+  Rendered puppies/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:50:16.533591"], ["updated_at", "2015-07-16 23:50:16.533591"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[36mPuppy Load (1.5ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+Started GET "/puppies/35" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = $1 LIMIT 1  [["id", 35]]
+  Rendered puppies/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:50:16.576680"], ["updated_at", "2015-07-16 23:50:16.576680"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (4.2ms)
+  Rendered puppies/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:50:16.603360"], ["updated_at", "2015-07-16 23:50:16.603360"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:50:16 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:50:16.617872"], ["updated_at", "2015-07-16 23:50:16.617872"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:50:16.623136"], ["updated_at", "2015-07-16 23:50:16.623136"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:50:16.626604"], ["updated_at", "2015-07-16 23:50:16.626604"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:50:16.630073"], ["updated_at", "2015-07-16 23:50:16.630073"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:54:46.920356"], ["updated_at", "2015-07-16 23:54:46.920356"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:54:46 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 210ms (Views: 200.8ms | ActiveRecord: 0.5ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (1.0ms)
+  Rendered puppies/_form.html.erb (32.5ms)
+  Rendered puppies/new.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:54:47.217887"], ["updated_at", "2015-07-16 23:54:47.217887"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:54:47.236296"], ["updated_at", "2015-07-16 23:54:47.236296"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (2.9ms)
+  Rendered puppies/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:54:47.256133"], ["updated_at", "2015-07-16 23:54:47.256133"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[36mPuppy Load (0.9ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+Started GET "/puppies/45" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mPuppy Load (0.6ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = $1 LIMIT 1  [["id", 45]]
+  Rendered puppies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:54:47.284152"], ["updated_at", "2015-07-16 23:54:47.284152"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (4.0ms)
+  Rendered puppies/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:54:47.308516"], ["updated_at", "2015-07-16 23:54:47.308516"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:54:47 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:54:47.324020"], ["updated_at", "2015-07-16 23:54:47.324020"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:54:47.328813"], ["updated_at", "2015-07-16 23:54:47.328813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:54:47.332167"], ["updated_at", "2015-07-16 23:54:47.332167"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:54:47.367253"], ["updated_at", "2015-07-16 23:54:47.367253"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.5ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:55:19.160707"], ["updated_at", "2015-07-16 23:55:19.160707"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 204ms (Views: 194.5ms | ActiveRecord: 0.4ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.9ms)
+  Rendered puppies/_form.html.erb (32.6ms)
+  Rendered puppies/new.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:55:19.450900"], ["updated_at", "2015-07-16 23:55:19.450900"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+  [1m[36mPuppy Load (1.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:55:19.475690"], ["updated_at", "2015-07-16 23:55:19.475690"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (3.2ms)
+  Rendered puppies/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:55:19.495908"], ["updated_at", "2015-07-16 23:55:19.495908"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1
+Started GET "/puppies/55" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"55"}
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = $1 LIMIT 1[0m  [["id", 55]]
+  Rendered puppies/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:55:19.523371"], ["updated_at", "2015-07-16 23:55:19.523371"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (2.5ms)
+  Rendered puppies/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:55:19.547428"], ["updated_at", "2015-07-16 23:55:19.547428"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:55:19 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.7ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:55:19.562507"], ["updated_at", "2015-07-16 23:55:19.562507"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:55:19.566985"], ["updated_at", "2015-07-16 23:55:19.566985"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:55:19.597720"], ["updated_at", "2015-07-16 23:55:19.597720"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:55:19.600790"], ["updated_at", "2015-07-16 23:55:19.600790"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:56:40.559568"], ["updated_at", "2015-07-16 23:56:40.559568"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 226ms (Views: 216.9ms | ActiveRecord: 0.4ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.7ms)
+  Rendered puppies/_form.html.erb (32.0ms)
+  Rendered puppies/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:56:40.876548"], ["updated_at", "2015-07-16 23:56:40.876548"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+  [1m[36mPuppy Load (1.2ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:56:40.903489"], ["updated_at", "2015-07-16 23:56:40.903489"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (3.1ms)
+  Rendered puppies/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:56:40.923676"], ["updated_at", "2015-07-16 23:56:40.923676"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1
+Started GET "/puppies/65" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = $1 LIMIT 1[0m  [["id", 65]]
+  Rendered puppies/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:56:40.949382"], ["updated_at", "2015-07-16 23:56:40.949382"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (2.4ms)
+  Rendered puppies/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:56:40.967629"], ["updated_at", "2015-07-16 23:56:40.967629"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:56:40 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:56:40.980299"], ["updated_at", "2015-07-16 23:56:40.980299"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:56:40.984874"], ["updated_at", "2015-07-16 23:56:40.984874"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:56:40.988125"], ["updated_at", "2015-07-16 23:56:40.988125"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:56:40.991452"], ["updated_at", "2015-07-16 23:56:40.991452"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:57:08.996471"], ["updated_at", "2015-07-16 23:57:08.996471"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.7ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 212ms (Views: 202.7ms | ActiveRecord: 0.7ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.7ms)
+  Rendered puppies/_form.html.erb (32.4ms)
+  Rendered puppies/new.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:57:09.294239"], ["updated_at", "2015-07-16 23:57:09.294239"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.6ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+  [1m[36mPuppy Load (0.7ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:57:09.316358"], ["updated_at", "2015-07-16 23:57:09.316358"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (2.8ms)
+  Rendered puppies/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:57:09.335811"], ["updated_at", "2015-07-16 23:57:09.335811"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1
+Started GET "/puppies/75" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"75"}
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  Rendered puppies/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:57:09.360758"], ["updated_at", "2015-07-16 23:57:09.360758"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (2.5ms)
+  Rendered puppies/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:57:09.378613"], ["updated_at", "2015-07-16 23:57:09.378613"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:57:09 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:57:09.390306"], ["updated_at", "2015-07-16 23:57:09.390306"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:57:09.396135"], ["updated_at", "2015-07-16 23:57:09.396135"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:57:09.400732"], ["updated_at", "2015-07-16 23:57:09.400732"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:57:09.428653"], ["updated_at", "2015-07-16 23:57:09.428653"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:58:32.154654"], ["updated_at", "2015-07-16 23:58:32.154654"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 203ms (Views: 194.0ms | ActiveRecord: 0.4ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (1.1ms)
+  Rendered puppies/_form.html.erb (32.4ms)
+  Rendered puppies/new.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:58:32.444379"], ["updated_at", "2015-07-16 23:58:32.444379"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.6ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+  [1m[36mPuppy Load (0.7ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "x"], ["created_at", "2015-07-16 23:58:32.468177"], ["updated_at", "2015-07-16 23:58:32.468177"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (3.2ms)
+  Rendered puppies/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:58:32.490823"], ["updated_at", "2015-07-16 23:58:32.490823"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1[0m
+  [1m[35mPuppy Load (0.4ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1
+Started GET "/puppies/85" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"85"}
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  Rendered puppies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x"], ["created_at", "2015-07-16 23:58:32.514717"], ["updated_at", "2015-07-16 23:58:32.514717"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Started GET "/puppies/new" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#new as HTML
+  Rendered puppies/_errors.html.erb (0.0ms)
+  Rendered puppies/_form.html.erb (2.7ms)
+  Rendered puppies/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "puppy"=>{"name"=>"Milo", "breed"=>"", "age"=>"", "bio"=>"", "image_url"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo"], ["bio", ""], ["breed", ""], ["image_url", ""], ["created_at", "2015-07-16 23:58:32.538545"], ["updated_at", "2015-07-16 23:58:32.538545"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/puppies
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/puppies" for 127.0.0.1 at 2015-07-16 16:58:32 -0700
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+  [1m[35mPuppy Load (0.5ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:58:32.555067"], ["updated_at", "2015-07-16 23:58:32.555067"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:58:32.591822"], ["updated_at", "2015-07-16 23:58:32.591822"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:58:32.595469"], ["updated_at", "2015-07-16 23:58:32.595469"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "puppies" ("name", "bio", "age", "breed", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fifi"], ["bio", "Likes to eat food"], ["age", 16], ["breed", "Cat"], ["image_url", "example.com"], ["created_at", "2015-07-16 23:58:32.598548"], ["updated_at", "2015-07-16 23:58:32.598548"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK

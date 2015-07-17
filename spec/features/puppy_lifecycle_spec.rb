@@ -4,18 +4,26 @@ feature 'Adding Milo, a new puppy that gets a name change' do
 
   before do
     #Create the valid puppy
-
+    puppy = Puppy.create(name:"x" )
     #setup scenario
     # => visit the puppies index path
+    visit puppies_path
 
     #execute scenario
     click_link "add_new_puppy"
     # => fill out the form and submit
+    fill_in "name", with: "Milo"
+
+    click_button 'post'
+
+    expect(page).to have_content Puppy.last.name
+
   end
 
   scenario 'after creating a valid puppy' do
     #You should see the new puppy name on the list
     # => expect(page).to
+    expect(page).to have_content Puppy.last.name
   end
 
   scenario 'click on Milo' do
